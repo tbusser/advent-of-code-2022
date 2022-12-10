@@ -1,8 +1,6 @@
-type RegExpGroups<T extends string> =
-	| (RegExpMatchArray & {
-			groups?: { [name in T]: string } | { [key: string]: string };
-	  })
-	| null;
+import { RegExpGroups } from '../utils/types.js';
+
+/* ========================================================================== */
 
 type RowRegexResult = RegExpGroups<'crate'>;
 type StepRegexResult = RegExpGroups<'amount' | 'fromStack' | 'toStack'>;
