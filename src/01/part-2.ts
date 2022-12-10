@@ -3,7 +3,7 @@ import { measure } from '../utils/performance.js';
 
 /* ========================================================================== */
 
-function calculateTotal(items: string): number {
+function calculateTotalCalories(items: string): number {
 	return items
 		.split('\n')
 		.reduce((total, item) => total + parseInt(item, 10), 0);
@@ -15,7 +15,7 @@ async function findSolution(): Promise<number> {
 	const itemsPerElf = input.split('\n\n');
 
 	// Calculate per elf how many calories they're carrying.
-	const caloriesPerElf = itemsPerElf.map(calculateTotal);
+	const caloriesPerElf = itemsPerElf.map(calculateTotalCalories);
 
 	// Sort the calories per elf, from lowest to highest.
 	caloriesPerElf.sort();
